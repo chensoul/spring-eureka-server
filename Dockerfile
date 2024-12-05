@@ -13,7 +13,7 @@ COPY --from=builder /extracted/spring-boot-loader/ ./
 COPY --from=builder /extracted/snapshot-dependencies/ ./
 COPY --from=builder /extracted/application/ ./
 
-ARG EXPOSED_PORT=8888
+ARG EXPOSED_PORT=8761
 EXPOSE ${EXPOSED_PORT}
 
 ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]
