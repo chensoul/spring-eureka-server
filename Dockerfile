@@ -1,7 +1,6 @@
 FROM eclipse-temurin:21.0.5_11-jre-jammy AS builder
 WORKDIR /extracted
 ARG JAR_FILE=target/*.jar
-#ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 RUN java -Djarmode=layertools -jar app.jar extract
 
